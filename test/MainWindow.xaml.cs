@@ -20,6 +20,7 @@ namespace test
     /// </summary>
     public partial class MainWindow : Window
     {
+        //lists for added exercises and food
         List<Food> foods = new List<Food>();
         List<Exercise> workouts = new List<Exercise>();
         public MainWindow()
@@ -29,6 +30,7 @@ namespace test
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //foods being created and added
             Food f1 = new Food()
             {
                 foodName = "Steak and chips",
@@ -64,6 +66,7 @@ namespace test
 
             Foodlbx.ItemsSource = foods;
 
+            //workouts being created and added
             Exercise e1 = new Exercise()
             {
                 exerciseName = "Bicep curls",
@@ -156,12 +159,14 @@ namespace test
 
         private void tbxCalGained_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //calculation to subtract calories
             if (!string.IsNullOrEmpty(tbxCalGained.Text) && !string.IsNullOrEmpty(tbxCalBurned.Text))
                 tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
         }
 
         private void calBurned_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //calculation to subtract calories
             if (!string.IsNullOrEmpty(tbxCalGained.Text) && !string.IsNullOrEmpty(tbxCalBurned.Text))
                 tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
                 tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
