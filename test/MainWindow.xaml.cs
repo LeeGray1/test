@@ -116,12 +116,58 @@ namespace test
 
             Exerciselbx.ItemsSource = workouts;
         }
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+       
+        private void Exerciselbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //check what was selected
+            Exercise selectedWorkout = Exerciselbx.SelectedItem as Exercise;
+
+            //make sure not null
+            if (selectedWorkout != null)
+            {
+                //update display
+
+                tbxCalBurned.Text = selectedWorkout.caloriesBurned.ToString();
+
+
+            }
+
+            
+        }
+
+        private void Foodlbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //check what was selected
+            Food selectedfood = Foodlbx.SelectedItem as Food;
+
+            //make sure not null
+            if (selectedfood != null)
+            {
+
+                //update display
+
+                tbxCalGained.Text = selectedfood.foodCalories.ToString();
+
+
+            }
+
 
         }
 
+        private void tbxCalGained_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbxCalGained.Text) && !string.IsNullOrEmpty(tbxCalBurned.Text))
+                tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
+        }
+
         private void calBurned_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbxCalGained.Text) && !string.IsNullOrEmpty(tbxCalBurned.Text))
+                tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
+                tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

@@ -8,16 +8,16 @@
         Title="MainWindow" Height="450" Width="800" Background="#FF0E5992" Loaded="Window_Loaded">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="38" Margin="311,37,0,0" TextWrapping="Wrap" Text="Calorie Calculator" VerticalAlignment="Top" Width="165" TextChanged="TextBox_TextChanged" FontSize="18" Background="#FFA7B1C6"/>
-        <ListBox x:Name="Foodlbx" HorizontalAlignment="Left" Height="260" Margin="10,88,0,0" VerticalAlignment="Top" Width="227" Background="#FFA7B1C6"/>
-        <ListBox x:Name="Exerciselbx" HorizontalAlignment="Left" Height="260" Margin="556,88,0,0" VerticalAlignment="Top" Width="227" Background="#FFA7B1C6"/>
+        <ListBox SelectionMode ="Extended" x:Name="Foodlbx" HorizontalAlignment="Left" Height="260" Margin="10,88,0,0" VerticalAlignment="Top" Width="227" Background="#FFA7B1C6" SelectionChanged="Foodlbx_SelectionChanged"/>
+        <ListBox SelectionMode ="Extended" x:Name="Exerciselbx" HorizontalAlignment="Left" Height="260" Margin="556,88,0,0" VerticalAlignment="Top" Width="227" Background="#FFA7B1C6" SelectionChanged="Exerciselbx_SelectionChanged"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="28,51,0,0" TextWrapping="Wrap" Text="Food" VerticalAlignment="Top" Width="165" TextChanged="TextBox_TextChanged" FontSize="18" Background="#FFA7B1C6"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="618,51,0,0" TextWrapping="Wrap" Text="Exercise" VerticalAlignment="Top" Width="165" TextChanged="TextBox_TextChanged" FontSize="18" Background="#FFA7B1C6"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="618,51,0,0" TextWrapping="Wrap" Text="Exercise" VerticalAlignment="Top" Width="165" FontSize="18" Background="#FFA7B1C6"/>
         <TextBlock HorizontalAlignment="Left" Margin="28,368,0,0" TextWrapping="Wrap" Text="Calorie Intake" VerticalAlignment="Top" Height="25" Width="98" FontSize="15"/>
         <TextBlock HorizontalAlignment="Left" Margin="556,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="117" FontSize="15"><Run Text="Calorie"/><Run Text="s burned"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="275,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="98" FontSize="15"><Run Text="Calorie "/><Run Text="result"/></TextBlock>
-        <TextBox x:Name="calResult" HorizontalAlignment="Left" Height="23" Margin="373,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6"/>
-        <TextBox x:Name="calGained" HorizontalAlignment="Left" Height="23" Margin="131,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6"/>
-        <TextBox x:Name="calBurned" HorizontalAlignment="Left" Height="23" Margin="701,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6" TextChanged="calBurned_TextChanged"/>
+        <TextBox x:Name="tbxCalResult" HorizontalAlignment="Left" Height="23" Margin="373,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6"/>
+        <TextBox x:Name="tbxCalGained" HorizontalAlignment="Left" Height="23" Margin="131,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6" TextChanged="tbxCalGained_TextChanged"/>
+        <TextBox x:Name="tbxCalBurned" HorizontalAlignment="Left" Height="23" Margin="701,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6" TextChanged="calBurned_TextChanged"/>
 
     </Grid>
 </Window>
