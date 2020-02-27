@@ -66,46 +66,46 @@ namespace test
 
             Exercise e1 = new Exercise()
             {
-                exerciseName ="Bicep curls",
+                exerciseName = "Bicep curls",
                 exerciseTime = 15,
-                caloriesBurned = ,
-                
-            }
+                caloriesBurned = 110,
+
+            };
             Exercise e2 = new Exercise()
             {
-                exerciseName = "",
-                exerciseTime = ,
-                caloriesBurned = ,
+                exerciseName = "Plank",
+                exerciseTime = 15,
+                caloriesBurned = 120,
 
-            }
-            Exercise e1 = new Exercise()
+            };
+            Exercise e3 = new Exercise()
             {
-                exerciseName = "",
-                exerciseTime = ,
-                caloriesBurned = ,
+                exerciseName = "Single leg squat",
+                exerciseTime = 15,
+                caloriesBurned = 105,
 
-            }
-            Exercise e1 = new Exercise()
+            };
+            Exercise e4 = new Exercise()
             {
-                exerciseName = "",
-                exerciseTime = ,
-                caloriesBurned = ,
+                exerciseName = "push-ups",
+                exerciseTime = 15,
+                caloriesBurned = 100,
 
-            }
-            Exercise e1 = new Exercise()
+            };
+            Exercise e5 = new Exercise()
             {
-                exerciseName = "",
-                exerciseTime = ,
-                caloriesBurned = ,
+                exerciseName = "pull-ups",
+                exerciseTime = 15,
+                caloriesBurned = 100,
 
-            }
-            Exercise e1 = new Exercise()
+            };
+            Exercise e6 = new Exercise()
             {
-                exerciseName = "",
-                exerciseTime = ,
-                caloriesBurned = ,
+                exerciseName = "Deadlift",
+                exerciseTime = 15,
+                caloriesBurned = 120,
 
-            }
+            };
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
