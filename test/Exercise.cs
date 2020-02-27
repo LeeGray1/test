@@ -26,9 +26,9 @@ namespace test
 
         public override string ToString()
         {
-            return (this.exerciseName + exerciseTime + caloriesBurned);
+            return string.Format($"{exerciseName} - {exerciseTime} minutes - {caloriesBurned} cal");
         }
 
-       
+
     }
 }

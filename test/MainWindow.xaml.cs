@@ -106,10 +106,24 @@ namespace test
                 caloriesBurned = 120,
 
             };
+
+            workouts.Add(e1);
+            workouts.Add(e2);
+            workouts.Add(e3);
+            workouts.Add(e4);
+            workouts.Add(e5);
+            workouts.Add(e6);
+
+            Exerciselbx.ItemsSource = workouts;
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-        }       
+        }
+
+        private void calBurned_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
