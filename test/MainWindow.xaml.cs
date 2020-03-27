@@ -123,37 +123,48 @@ namespace test
         private void Exerciselbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //check what was selected
-            Exercise selectedWorkout = Exerciselbx.SelectedItem as Exercise;
+            //Exercise selectedWorkout = Exerciselbx.SelectedItem as Exercise;
+            int burned = 0;
 
-            //make sure not null
-            if (selectedWorkout != null)
+            foreach (Exercise selectedworkout in Exerciselbx.SelectedItems)
             {
-                //update display
+                //make sure not null
+                if (selectedworkout != null)
+                {
 
-                tbxCalBurned.Text = selectedWorkout.caloriesBurned.ToString();
 
+                    //update display
 
+                     burned += selectedworkout.caloriesBurned;
+                }                
             }
-
-            
+            tbxCalBurned.Text = burned.ToString();
         }
 
         private void Foodlbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //check what was selected
-            Food selectedfood = Foodlbx.SelectedItem as Food;
-
-            //make sure not null
-            if (selectedfood != null)
+            // Food selectedfood = Foodlbx.SelectedItem as Food;
+            int totalCal = 0;
+            foreach (Food selectedfood in Foodlbx.SelectedItems)
             {
 
-                //update display
-
-                tbxCalGained.Text = selectedfood.foodCalories.ToString();
+                // how to check li is selected or not
 
 
+                //make sure not null
+                if (selectedfood != null)
+                {
+
+
+                    //update display
+
+                    totalCal += selectedfood.foodCalories;
+
+
+                }
             }
-
+            tbxCalGained.Text = totalCal.ToString();
 
         }
 
