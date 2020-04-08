@@ -9,7 +9,6 @@ namespace test
     class Exercise
     {
         public string exerciseName { get; set; }
-        public int exerciseTime { get; set; }
         public int caloriesBurned { get; set; }
 
         public Exercise()
@@ -20,13 +19,12 @@ namespace test
         public Exercise(string execisename, int time, int caloriesburned)
         {
             exerciseName = execisename;
-            exerciseTime = time;
             caloriesBurned = caloriesburned;
         }
 
         public override string ToString()
         {
-            return string.Format($"{exerciseName} - {exerciseTime} minutes - {caloriesBurned} cal");
+            return string.Format($"{exerciseName} - {caloriesBurned} cal per hour");
         }
 
 

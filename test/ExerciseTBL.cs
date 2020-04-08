@@ -12,11 +12,10 @@ namespace test
     using System;
     using System.Collections.Generic;
     
-    public partial class ExercisesTBL
+    public partial class ExerciseTBL
     {
-        public int CalBurned { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Time { get; set; }
+        public int CalBurned { get; set; }
     }
 }

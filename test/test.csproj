@@ -64,27 +64,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Calories.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Calories.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Calories.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Calories.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Calories.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Calories.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ExercisesTBL.cs">
-      <DependentUpon>Calories.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FoodTBL.cs">
-      <DependentUpon>Calories.tt</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,8 +72,29 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Calories_Database.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calories_Database.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Calories_Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calories_Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Calories_Database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calories_Database.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Exercise1.cs" />
+    <Compile Include="ExerciseTBL.cs">
+      <DependentUpon>Calories_Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="food1.cs" />
+    <Compile Include="FoodTBL.cs">
+      <DependentUpon>Calories_Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -118,12 +118,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Calories.edmx">
+    <EntityDeploy Include="Calories_Database.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Calories.Designer.cs</LastGenOutput>
+      <LastGenOutput>Calories_Database.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Calories.edmx.diagram">
-      <DependentUpon>Calories.edmx</DependentUpon>
+    <None Include="Calories_Database.edmx.diagram">
+      <DependentUpon>Calories_Database.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -138,16 +138,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Calories.Context.tt">
+    <Content Include="Calories_Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Calories.Context.cs</LastGenOutput>
-      <DependentUpon>Calories.edmx</DependentUpon>
+      <LastGenOutput>Calories_Database.Context.cs</LastGenOutput>
+      <DependentUpon>Calories_Database.edmx</DependentUpon>
     </Content>
-    <Content Include="Calories.edmx.sql" />
-    <Content Include="Calories.tt">
+    <Content Include="Calories_Database.edmx.sql" />
+    <Content Include="Calories_Database.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Calories.cs</LastGenOutput>
-      <DependentUpon>Calories.edmx</DependentUpon>
+      <LastGenOutput>Calories_Database.cs</LastGenOutput>
+      <DependentUpon>Calories_Database.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

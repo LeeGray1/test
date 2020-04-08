@@ -20,7 +20,7 @@ namespace test
     /// </summary>
     public partial class MainWindow : Window
     {
-        CaloriesContainer1 db = new CaloriesContainer1();
+        Calories_DatabaseContainer db = new Calories_DatabaseContainer();
         //lists for added exercises and food
 
         
@@ -48,18 +48,18 @@ namespace test
             Foodlbx.ItemsSource = foods;
 
             //workouts being created and added
-            var Exercises = from E in db.ExercisesTBLs
+            var Exercises = from E in db.ExerciseTBLs
                                 orderby E.Name
-                                select new { E.Name,E.Time ,E.CalBurned };
+                                select new { E.Name,E.CalBurned };
             List<Exercise> workouts = new List<Exercise>();
-            foreach (var Healthy in Selectedfoods)
+            foreach (var Healthy in Exercises)
             {
                 Exercise w = new Exercise();
                 w.exerciseName = Healthy.Name;
 
                 //w.exerciseTime = Healthy.Time;
 
-                w.caloriesBurned = Healthy.Calories;
+                w.caloriesBurned = Healthy.CalBurned;
 
                 //w.exerciseTime = Healthy.Time;
 
