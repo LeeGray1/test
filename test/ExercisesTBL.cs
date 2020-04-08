@@ -12,11 +12,11 @@ namespace test
     using System;
     using System.Collections.Generic;
     
-    public partial class Foodcalories
+    public partial class ExercisesTBL
     {
+        public int CalBurned { get; set; }
         public int Id { get; set; }
-        public string Calories { get; set; }
-    
-        public virtual FoodName FoodName { get; set; }
+        public string Name { get; set; }
+        public int Time { get; set; }
     }
 }

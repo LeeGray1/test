@@ -20,9 +20,10 @@ namespace test
     /// </summary>
     public partial class MainWindow : Window
     {
+        CaloriesContainer1 db = new CaloriesContainer1();
         //lists for added exercises and food
-        List<Food> foods = new List<Food>();
-        List<Exercise> workouts = new List<Exercise>();
+
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -30,96 +31,44 @@ namespace test
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //foods being created and added
-            Food f1 = new Food()
+            var Selectedfoods = from F in db.FoodTBLs
+                                orderby F.Name
+                                select new { F.Name, F.Calories };
+            List<Food> foods = new List<Food>();
+            foreach (var item in Selectedfoods)
             {
-                foodName = "Steak and chips",
-                foodCalories = 661 
-                
-            };
-            Food f2 = new Food()
-            {
-                foodName = "Roast dinner",
-                foodCalories = 850
-            };
-            Food f3 = new Food()
-            {
-                foodName = "Shepards pie",
-                foodCalories = 922
-            };
-            Food f4 = new Food()
-            {
-                foodName = "Fish and chips",
-                foodCalories = 840
-            };
-            Food f5 = new Food()
-            {
-                foodName = "Lasagne",
-                foodCalories = 135
-            };
+                Food f = new Food();
+                f.foodName = item.Name;
 
-            foods.Add(f1);
-            foods.Add(f2);
-            foods.Add(f3);
-            foods.Add(f4);
-            foods.Add(f5);
+                f.foodCalories = item.Calories;
+
+                foods.Add(f);
+            }
 
             Foodlbx.ItemsSource = foods;
 
             //workouts being created and added
-            Exercise e1 = new Exercise()
+            var Exercises = from E in db.ExercisesTBLs
+                                orderby E.Name
+                                select new { E.Name,E.Time ,E.CalBurned };
+            List<Exercise> workouts = new List<Exercise>();
+            foreach (var Healthy in Selectedfoods)
             {
-                exerciseName = "Bicep curls",
-                exerciseTime = 15,
-                caloriesBurned = 110,
+                Exercise w = new Exercise();
+                w.exerciseName = Healthy.Name;
 
-            };
-            Exercise e2 = new Exercise()
-            {
-                exerciseName = "Plank",
-                exerciseTime = 15,
-                caloriesBurned = 120,
+                //w.exerciseTime = Healthy.Time;
 
-            };
-            Exercise e3 = new Exercise()
-            {
-                exerciseName = "Single leg squat",
-                exerciseTime = 15,
-                caloriesBurned = 105,
+                w.caloriesBurned = Healthy.Calories;
 
-            };
-            Exercise e4 = new Exercise()
-            {
-                exerciseName = "push-ups",
-                exerciseTime = 15,
-                caloriesBurned = 100,
+                //w.exerciseTime = Healthy.Time;
 
-            };
-            Exercise e5 = new Exercise()
-            {
-                exerciseName = "pull-ups",
-                exerciseTime = 15,
-                caloriesBurned = 100,
-
-            };
-            Exercise e6 = new Exercise()
-            {
-                exerciseName = "Deadlift",
-                exerciseTime = 15,
-                caloriesBurned = 120,
-
-            };
-
-            workouts.Add(e1);
-            workouts.Add(e2);
-            workouts.Add(e3);
-            workouts.Add(e4);
-            workouts.Add(e5);
-            workouts.Add(e6);
+                workouts.Add(w);
+            }
 
             Exerciselbx.ItemsSource = workouts;
         }
-       
+
         private void Exerciselbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //check what was selected
@@ -135,8 +84,8 @@ namespace test
 
                     //update display
 
-                     burned += selectedworkout.caloriesBurned;
-                }                
+                    burned += selectedworkout.caloriesBurned;
+                }
             }
             tbxCalBurned.Text = burned.ToString();
         }
@@ -180,7 +129,7 @@ namespace test
             //calculation to subtract calories
             if (!string.IsNullOrEmpty(tbxCalGained.Text) && !string.IsNullOrEmpty(tbxCalBurned.Text))
                 tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
-                tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
+            tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

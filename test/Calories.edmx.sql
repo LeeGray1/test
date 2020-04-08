@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/06/2020 18:21:47
--- Generated from EDMX file: C:\Users\leegr\source\repos\test\test\Food.edmx
+-- Date Created: 04/08/2020 14:30:05
+-- Generated from EDMX file: C:\Users\leegr\source\repos\test\test\Calories.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Food_Database];
+USE [Calories];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -22,23 +22,31 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ExercisesTBLs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ExercisesTBLs];
+GO
+IF OBJECT_ID(N'[dbo].[FoodTBLs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FoodTBLs];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
 
--- Creating table 'FoodNames'
-CREATE TABLE [dbo].[FoodNames] (
+-- Creating table 'ExercisesTBLs'
+CREATE TABLE [dbo].[ExercisesTBLs] (
+    [CalBurned] int  NOT NULL,
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Foodcalory_Id] int  NOT NULL
+    [Time] int  NOT NULL
 );
 GO
 
--- Creating table 'Foodcalories'
-CREATE TABLE [dbo].[Foodcalories] (
+-- Creating table 'FoodTBLs'
+CREATE TABLE [dbo].[FoodTBLs] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Calories] nvarchar(max)  NOT NULL
+    [Name] nvarchar(max)  NOT NULL,
+    [Calories] int  NOT NULL
 );
 GO
 
@@ -46,36 +54,21 @@ GO
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [Id] in table 'FoodNames'
-ALTER TABLE [dbo].[FoodNames]
-ADD CONSTRAINT [PK_FoodNames]
+-- Creating primary key on [Id] in table 'ExercisesTBLs'
+ALTER TABLE [dbo].[ExercisesTBLs]
+ADD CONSTRAINT [PK_ExercisesTBLs]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Foodcalories'
-ALTER TABLE [dbo].[Foodcalories]
-ADD CONSTRAINT [PK_Foodcalories]
+-- Creating primary key on [Id] in table 'FoodTBLs'
+ALTER TABLE [dbo].[FoodTBLs]
+ADD CONSTRAINT [PK_FoodTBLs]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [Foodcalory_Id] in table 'FoodNames'
-ALTER TABLE [dbo].[FoodNames]
-ADD CONSTRAINT [FK_FoodNameFoodcalories]
-    FOREIGN KEY ([Foodcalory_Id])
-    REFERENCES [dbo].[Foodcalories]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_FoodNameFoodcalories'
-CREATE INDEX [IX_FK_FoodNameFoodcalories]
-ON [dbo].[FoodNames]
-    ([Foodcalory_Id]);
-GO
 
 -- --------------------------------------------------
 -- Script has ended

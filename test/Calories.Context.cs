@@ -13,10 +13,10 @@ namespace test
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FoodContainer : DbContext
+    public partial class CaloriesContainer1 : DbContext
     {
-        public FoodContainer()
-            : base("name=FoodContainer")
+        public CaloriesContainer1()
+            : base("name=CaloriesContainer1")
         {
         }
     
@@ -25,7 +25,7 @@ namespace test
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<FoodName> FoodNames { get; set; }
-        public virtual DbSet<Foodcalories> Foodcalories { get; set; }
+        public virtual DbSet<ExercisesTBL> ExercisesTBLs { get; set; }
+        public virtual DbSet<FoodTBL> FoodTBLs { get; set; }
     }
 }

@@ -4,10 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b0e4116556544f699a30b01aad816b8f" Name="Diagram1" >
-        <EntityTypeShape EntityType="Food.FoodName" Width="1.5" PointX="4.5" PointY="3.5" />
-        <EntityTypeShape EntityType="Food.Foodcalories" Width="1.5" PointX="6.75" PointY="3.5" />
-        <AssociationConnector Association="Food.FoodNameFoodcalories" />
+      <Diagram DiagramId="accabfb85c04445f867b95b6cad7c40f" Name="Diagram1" >
+        <EntityTypeShape EntityType="Calories.ExercisesTBL" Width="1.5" PointX="3.25" PointY="2.5" />
+        <EntityTypeShape EntityType="Calories.FoodTBL" Width="1.5" PointX="5.5" PointY="2.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
