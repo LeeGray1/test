@@ -149,6 +149,9 @@
       <LastGenOutput>Calories_Database.cs</LastGenOutput>
       <DependentUpon>Calories_Database.edmx</DependentUpon>
     </Content>
+    <Resource Include="Images\Health.jpg" />
+    <Resource Include="Images\Daily-Calories.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

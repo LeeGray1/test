@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF0E5992" Loaded="Window_Loaded">
+
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\leegr\source\repos\test\test\Images\Health.jpg"/>
+        </Grid.Background>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
@@ -18,20 +23,52 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Calorie Calculator" VerticalAlignment="Top"  TextChanged="TextBox_TextChanged" FontSize="18" Background="#FFA7B1C6"/>
-        <ListBox Grid.Row="1" Grid.Column="0"  SelectionMode ="Extended" x:Name="Foodlbx" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Background="#FFA7B1C6" SelectionChanged="Foodlbx_SelectionChanged"/>
-        <ListBox Grid.Row="1" Grid.Column="2" SelectionMode ="Extended" x:Name="Exerciselbx" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Background="#FFA7B1C6" SelectionChanged="Exerciselbx_SelectionChanged"/>
-        <TextBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Food" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" FontSize="18" Background="#FFA7B1C6"/>
-        <TextBox Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Exercise" VerticalAlignment="Top" FontSize="18" Background="#FFA7B1C6"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Calorie Intake" VerticalAlignment="Top" FontSize="15"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Text="Calorie"/><Run Text="s burned"/></TextBlock>
-       
-        
-        <TextBox Grid.Row="2" Grid.Column="0" x:Name="tbxCalGained" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6" TextChanged="tbxCalGained_TextChanged" Margin="10,25.333,0,0"/>
-        <TextBox Grid.Row="2" Grid.Column="2" x:Name="tbxCalBurned" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6" TextChanged="calBurned_TextChanged" Margin="9.667,25.333,0,0"/>
+        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Calorie Calculator" VerticalAlignment="Center"  TextChanged="TextBox_TextChanged" FontSize="18" Foreground="#FFCFEEED" BorderBrush="#FFD5EEFF">
+            <TextBox.Background>
+                <ImageBrush/>
+            </TextBox.Background>
+        </TextBox>
+        <ListBox Grid.Row="1" Grid.Column="0"  SelectionMode ="Extended" x:Name="Foodlbx" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="Foodlbx_SelectionChanged" Foreground="#FFCFEEED" FontSize="16" BorderBrush="#FFD5EEFF">
+            <ListBox.Background>
+                <ImageBrush/>
+            </ListBox.Background>
+        </ListBox>
+        <ListBox Grid.Row="1" Grid.Column="2" SelectionMode ="Extended" x:Name="Exerciselbx" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" SelectionChanged="Exerciselbx_SelectionChanged" Foreground="#FFCFEEED" FontSize="16" BorderBrush="#FFD5EEFF">
+            <ListBox.Background>
+                <ImageBrush/>
+            </ListBox.Background>
+        </ListBox>
+        <TextBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Food" VerticalAlignment="Center" TextChanged="TextBox_TextChanged" FontSize="18" Foreground="#FFCFEEED" BorderBrush="#FFD5EEFF">
+            <TextBox.Background>
+                <ImageBrush/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Exercise" VerticalAlignment="Center" FontSize="18" Foreground="#FFCFEEED" BorderBrush="#FFD5EEFF">
+            <TextBox.Background>
+                <ImageBrush/>
+            </TextBox.Background>
+        </TextBox>
+
+        <!--Alignment for calorie burned text and and output-->
+        <StackPanel Grid.Row="2" Grid.Column="2" VerticalAlignment="Center">
+            <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="#FFCFEEED"><Run Text="Calorie"/><Run Text="s burned"/></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="2" x:Name="tbxCalBurned" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFD5EEFF" TextChanged="calBurned_TextChanged" FontWeight="Bold" BorderBrush="#FFD5EEFF"/>
+        </StackPanel>
+
+
+        <!--Alignment for total calorie results text and output-->
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
-            <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15"><Run Text="Calorie "/><Run Text="result"/></TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxCalResult" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFA7B1C6"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Foreground="#FFCFEEED"><Run Text="Calorie "/><Run Text="result"/></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbxCalResult" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFD5EEFF" FontWeight="Bold" BorderBrush="#FFD5EEFF"/>
+        </StackPanel>
+
+        <!--Alignment for calorie intake text and and output-->
+        <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Calorie Intake" VerticalAlignment="Top" FontSize="16" Foreground="#FFCFEEED"/>
+            <TextBox Grid.Row="2" Grid.Column="0" x:Name="tbxCalGained" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Background="#FFD5EEFF" TextChanged="tbxCalGained_TextChanged" FontWeight="Bold" BorderBrush="#FFD5EEFF"/>
         </StackPanel>
     </Grid>
+
+    
 </Window>
+    
