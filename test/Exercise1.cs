@@ -16,7 +16,7 @@ namespace test
 
         }
 
-        public Exercise(string execisename, int time, int caloriesburned)
+        public Exercise(string execisename, int caloriesburned)
         {
             exerciseName = execisename;
             caloriesBurned = caloriesburned;

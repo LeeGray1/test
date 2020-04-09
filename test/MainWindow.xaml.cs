@@ -127,9 +127,8 @@ namespace test
         private void calBurned_TextChanged(object sender, TextChangedEventArgs e)
         {
             //calculation to subtract calories
-            if (!string.IsNullOrEmpty(tbxCalGained.Text) && !string.IsNullOrEmpty(tbxCalBurned.Text))
-                tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
-            tbxCalResult.Text = (Convert.ToInt32(tbxCalGained.Text) - Convert.ToInt32(tbxCalBurned.Text)).ToString();
+            if (!string.IsNullOrEmpty(tbxCalBurned.Text) && !string.IsNullOrEmpty(tbxCalGained.Text))
+                tbxCalResult.Text = (Convert.ToInt32(tbxCalBurned.Text) - Convert.ToInt32(tbxCalBurned.Text) - Convert.ToInt32(tbxCalBurned.Text) + Convert.ToInt32(tbxCalGained.Text)).ToString();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
